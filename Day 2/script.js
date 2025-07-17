@@ -221,7 +221,7 @@ let ladder = {
         this.showStep();
     },
     down(){
-        this.step > 0 ? this.step-- : alert('value can not be decremented more');
+        this.step > 0 ? this.step-- : null;
         this.showStep();
     },
     showStep: function() {
