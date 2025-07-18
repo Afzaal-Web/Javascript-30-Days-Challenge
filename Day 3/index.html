@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 4 - Contact List</title>
+  <style>
+   body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#addContact {
+  background-color: #28a745;
+  color: white;
+}
+
+#addContact:hover {
+  background-color: #218838;
+}
+
+#clearAllContacts {
+  background-color: #dc3545;
+  color: white;
+}
+
+#clearAllContacts:hover {
+  background-color: #c82333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.clearContact {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clearContact:hover {
+  background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="text"],
+  button {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  }
+
+  td {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <h1>Contact List</h1>
+
+  <div class="form-group">
+    <input type="text" id="contact-name" placeholder="Enter contact name" />
+    <input type="text" id="phoneNumber" placeholder="Enter phone number" />
+    <button id="addContact">Add</button>
+    <button id="clearAllContacts">Clear All</button>
+  </div>
+
+  <table id="contact-list">
+    <thead>
+      <tr>
+        <th>Contact Name</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
